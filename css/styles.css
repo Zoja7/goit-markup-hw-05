@@ -15,7 +15,10 @@
     --hover-color: #404BBF;
     --border-line-color: #E7E9FC;
     --icon-link-hover: #31D0AA;
-    --icon-color: #8E8F99;
+    --icon-color: #8E8F99; 
+    --background-modal: #FCFCFC;
+
+    --transition-duration-and-func: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .list{
@@ -101,12 +104,42 @@ img {
     line-height: 1.5;
     letter-spacing: 0.02em;
     color: var(--accent-color);
+
+    transition: color 250ms var(--transition-duration-and-func);
 }
+.studio-link::after{
+    content:'';
+    display: block;
+    margin-left:auto;
+    margin-right: auto;
+    width: 100%;
+    height: 4px;
+    background-color: #404BBF;
+    border-radius: 2px;
+
+    transition: background-color var(--transition-duration-and-func),
+                border-radius var(--transition-duration-and-func);
+}
+.portfolio-link::after{
+    content: '';
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    height: 4px;
+    background-color: #404BBF;
+    border-radius: 2px;
+
+    transition: background-color var(--transition-duration-and-func),
+                 border-radius var(--transition-duration-and-func);
+}
+
 .menu-link:hover,
 .menu-link:focus {
     color: var(--hover-color);
+    }
 
-}
+
 
 .contacts {
     margin-left: auto;
@@ -127,6 +160,8 @@ img {
     line-height: 1.5;
     letter-spacing: 0.02em;
     color: var(--third-color);
+
+    transition: color var(--transition-duration-and-func);
 }
 .contact-list-link:hover,
 .contact-list-link:focus {
@@ -193,6 +228,9 @@ img {
     line-height: 1.5;
     letter-spacing: 0.04em;
     color: var(--fourth-color);
+
+    transition: background-color var(--transition-duration-and-func), 
+                box-shadow var(--transition-duration-and-func);
 }
 
 .hero-button:hover,
@@ -378,6 +416,8 @@ img {
 
     border-radius: 50%;
     background-color: var(--logo-color);
+
+    transition: background-color var(--transition-duration-and-func);
 }
 .social-list-icon{
     fill: var(--second-color);
@@ -429,6 +469,9 @@ img {
 
     width: 100%;
     height: 100%;
+
+    transition: border-color var(--transition-duration-and-func),
+    color var(--transition-duration-and-func);
 }
 
 
@@ -522,6 +565,8 @@ img {
 
     border-radius: 50%;
     background-color: var(--logo-color);
+
+    transition: background-color var(--transition-duration-and-func);
 }
 
 .social-media-list-link:hover,
@@ -548,6 +593,7 @@ img {
     justify-content: center;
     margin-bottom: 72px;
 }
+
 .filter-button-item:last-child{
     margin-right: 0;
 }
@@ -555,7 +601,7 @@ img {
 
 .filter-button {
 
-    border: 1px solid #E7E9FC;
+    border: 1px solid var(--border-line-color);
     border-radius: 4px;
 
     padding-top: 12px;
@@ -571,6 +617,11 @@ img {
     letter-spacing: 0.04em;
     background-color: var(--second-color);
     color: var(--logo-color);
+
+    transition: color  var(--transition-duration-and-func),
+            background-color var(--transition-duration-and-func), 
+            border 250ms var(--transition-duration-and-func),
+            box-shadow 250ms var(--transition-duration-and-func);
 }
 
 .filter-button:hover,
@@ -583,6 +634,8 @@ img {
         0px 2px 1px rgba(0, 0, 0, 0.08),
         0px 2px 2px rgba(0, 0, 0, 0.12);
 }
+
+
 /*===/Portfolio components==*/
 
 .title-first {
@@ -620,6 +673,7 @@ img {
 
 .gallery-link{
     display: block;
+    transition: box-shadow var(--transition-duration-and-func);
 }
 .gallery-link:hover,
 .gallery-link:focus {
@@ -639,4 +693,81 @@ box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
     border: 1px solid var(--border-line-color);
     border-top: none;
     border-radius: 0px 0px 4px 4px;
+}
+
+.project-gallery-img-wrapper {
+    position: relative;
+    overflow: hidden;
+}
+.overlay {
+    font-size: 16px;
+    line-height: 1.5;
+
+    padding-top: 40px;
+    padding-left: 32px;
+    padding-right: 32px;
+    padding-bottom: 164px;
+    color:var(--second-color);
+    background-color: var(--logo-color);
+
+    position: absolute;
+    top:0;
+    left:0;
+
+    width: 100%;
+    height: 100%;
+
+    transform: translateY(100%);
+    transition: transform 250ms var(--transition-duration-and-func);
+}
+
+.gallery-link:hover .overlay,
+.gallery-link:focus .overlay {
+    transform: translateY(0%);
+}
+
+/*=====/Portfoio/=====*/
+
+/*===Modal===*/
+.backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(46, 47, 66, 0.4);
+    width: 100%;
+    height: 100%;
+    transition: opacity 250ms ease,
+    visibility 250ms ease;
+}
+.modal{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 408px;
+    height: 584px;
+    background-color: var(--background-modal);
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 1px 3px rgba(0, 0, 0, 0.12),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+}
+.modal-close-btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    width: 24px;
+    height: 24px;
+    background: var(--border-line-color);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 50%;   
+}
+.is-hidden{
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
 }
