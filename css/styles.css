@@ -78,6 +78,10 @@ img {
    
 }
 
+.page-logo-web{
+    display: block;
+}
+
 .page-navigation {
     display:flex;
     align-items:center;
@@ -96,8 +100,6 @@ img {
 }
 
 .menu-link {
-    position:relative;
-
     padding-top: 24px;
     padding-bottom: 24px;
 
@@ -105,11 +107,15 @@ img {
     font-size: 16px;
     line-height: 1.5;
     letter-spacing: 0.02em;
+    color: var(--accent-color);    
+}
+.current {
+    position: relative;
     color: #404bbf;
-
     transition: color var(--transition-duration-and-func);
 }
-.studio-link::after{
+
+.current::after{
     position: absolute;
     left: 0;
     bottom:-1px;
@@ -125,27 +131,10 @@ img {
     transition: background-color var(--transition-duration-and-func),
                 border-radius var(--transition-duration-and-func);
 }
-.portfolio-link::after{
-    position: absolute;
-    content: '';
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 100%;
-    height: 4px;
-    background-color: #404BBF;
-    border-radius: 2px;
-
-    transition: background-color var(--transition-duration-and-func),
-                 border-radius var(--transition-duration-and-func);
-}
-
 .menu-link:hover,
 .menu-link:focus {
     color: var(--hover-color);
     }
-
-
 
 .contacts {
     margin-left: auto;
