@@ -614,7 +614,7 @@ img {
     color: var(--logo-color);
     transition: color  var(--transition-duration-and-func),
             background-color var(--transition-duration-and-func), 
-            border  var(--transition-duration-and-func),
+            border-color var(--transition-duration-and-func),
             box-shadow var(--transition-duration-and-func);
 }
 
@@ -698,9 +698,10 @@ box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
     line-height: 1.5;
     letter-spacing: 0.02em;
     padding-top: 40px;
+    padding-bottom: 40px;
     padding-left: 32px;
     padding-right: 32px;
-   /* padding-bottom: 164px;*/
+ 
     color:var(--second-color);
     background-color: var(--logo-color);
 
