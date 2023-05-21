@@ -612,11 +612,10 @@ img {
     letter-spacing: 0.04em;
     background-color: var(--second-color);
     color: var(--logo-color);
-
     transition: color  var(--transition-duration-and-func),
             background-color var(--transition-duration-and-func), 
-            border 250ms var(--transition-duration-and-func),
-            box-shadow 250ms var(--transition-duration-and-func);
+            border  var(--transition-duration-and-func),
+            box-shadow var(--transition-duration-and-func);
 }
 
 .filter-button:hover,
@@ -697,11 +696,11 @@ box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
 .overlay {
     font-size: 16px;
     line-height: 1.5;
-
+    letter-spacing: 0.02em;
     padding-top: 40px;
     padding-left: 32px;
     padding-right: 32px;
-    padding-bottom: 164px;
+   /* padding-bottom: 164px;*/
     color:var(--second-color);
     background-color: var(--logo-color);
 
@@ -713,7 +712,7 @@ box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
     height: 100%;
 
     transform: translateY(100%);
-    transition: transform 250ms var(--transition-duration-and-func);
+    transition: transform var(--transition-duration-and-func);
 }
 
 .gallery-link:hover .overlay,
@@ -732,7 +731,7 @@ box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
     width: 100%;
     height: 100%;   
     transition: opacity var(--transition-duration-and-func),
-            visibility var(--transition-duration-and-func);
+                visibility var(--transition-duration-and-func);
 }   
 .modal{
     position: absolute;
@@ -740,7 +739,7 @@ box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
     left: 50%;
     transform: translate(-50%,-50%);
     width: 408px;
-    min-height: 576px;
+    min-height: 584px;
     background-color: var(--background-modal);
     box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 1px 3px rgba(0, 0, 0, 0.12),
